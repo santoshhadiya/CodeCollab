@@ -17,7 +17,7 @@ const App = () => {
   const [language, setLanguage] = useState("javascript");
 
   useEffect(() => {
-    socket = io('http://localhost:3000');
+    socket = io('https://codecollab-backend-84as.onrender.com');
 
     socket.on('connect', () => {});
 
@@ -237,6 +237,21 @@ const App = () => {
               </div>
             </div>
           </div>
+          <footer className="bg-gray-800 border-t border-gray-700 py-6 mt-8">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-4 md:mb-0">
+            <h3 className="text-lg font-semibold text-blue-400">CodeCollab</h3>
+            <p className="text-gray-400 text-sm">Real-time collaborative code editor</p>
+          </div>
+          <div className="text-gray-400 text-sm text-center md:text-right">
+            <p>Created by <a className="text-blue-400" href='https://santoshhadiya.github.io/santosh/'>Santosh Hadiya</a></p>
+            <p>BCA Student at Som-Lalit Institute of Computer Application</p>
+            <p>Ahmedabad | <a href="mailto:santoshhadiya333@gmail.com" className="hover:text-blue-400">santoshhadiya333@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
         </div>
       )}
     </div>

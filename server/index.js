@@ -2,9 +2,9 @@ const express = require("express");
 const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const PORT=process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 let code = "";
@@ -12,7 +12,10 @@ const usersInRoom = {};
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: [
+      "https://codecollab-frontend-kgxh.onrender.com",
+      "http://localhost:5173",
+    ],
     methods: ["GET", "POST"],
   },
 });
@@ -68,9 +71,9 @@ io.on("connection", (socket) => {
     }
   });
 
-  socket.on('userTyping', (data)=>{
-    io.to(socket.room).emit('userTyping', {userName:data.user});
-  })
+  socket.on("userTyping", (data) => {
+    io.to(socket.room).emit("userTyping", { userName: data.user });
+  });
 
   socket.on("disconnect", () => {
     const room = socket.room;
@@ -86,5 +89,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(PORT, () => {
-  console.log("server running at port 3000");
+  console.log("server running at port: " + PORT);
 });
