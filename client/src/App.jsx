@@ -17,7 +17,7 @@ const App = () => {
   const [language, setLanguage] = useState("javascript");
 
   useEffect(() => {
-    socket = io('http://localhost:3000');
+    socket = io('https://codecollab-backend-84as.onrender.com');
 
     socket.on('connect', () => {});
 
