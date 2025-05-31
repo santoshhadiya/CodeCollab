@@ -12,10 +12,14 @@ const usersInRoom = {};
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
+<<<<<<< HEAD
     origin: [
       "https://codecollab-frontend-kgxh.onrender.com",
       "http://localhost:5173",
     ],
+=======
+    origin: ["https://codecollab-frontend-kgxh.onrender.com", "http://localhost:5173"],
+>>>>>>> 0e9a124cf027830bf0b35d431b4112b1fc420dc2
     methods: ["GET", "POST"],
   },
 });
